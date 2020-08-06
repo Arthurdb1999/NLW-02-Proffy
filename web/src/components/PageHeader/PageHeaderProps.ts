@@ -1,3 +1,4 @@
 export default interface PageHeaderProps {
-    title: string
+    title: string;
+    description?: string;
 }
