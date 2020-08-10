@@ -29,7 +29,6 @@ const TeacherList = () => {
             setTeachers(response.data)
         })
 
-        console.log()
     }
 
 

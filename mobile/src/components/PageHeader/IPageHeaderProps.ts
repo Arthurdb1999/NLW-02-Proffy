@@ -1,3 +1,6 @@
+import { ReactNode } from "react";
+
 export default interface IPageHeaderProps {
-    title: string
+    title: string;
+    headerRight?: ReactNode;
 }

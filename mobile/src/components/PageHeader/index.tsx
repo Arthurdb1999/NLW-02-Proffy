@@ -10,24 +10,29 @@ import styles from './styles';
 
 import IPageHeaderProps from './IPageHeaderProps';
 
-const PageHeader: React.FC<IPageHeaderProps> = ({ title }) => {
+const PageHeader: React.FC<IPageHeaderProps> = ({ title, children, headerRight }) => {
 
     const { navigate } = useNavigation()
 
-  return (
-    <View style={styles.container}>
-        <View style={styles.topBar}>
-        <BorderlessButton
-            onPress={() => navigate('Landing')}
-        >
-            <Image source={backIcon} resizeMode="contain" />
-        </BorderlessButton>
+    return (
+        <View style={styles.container}>
+            <View style={styles.topBar}>
+                <BorderlessButton
+                    onPress={() => navigate('Landing')}
+                >
+                    <Image source={backIcon} resizeMode="contain" />
+                </BorderlessButton>
 
-        <Image source={logoImg} resizeMode="contain" />
+                <Image source={logoImg} resizeMode="contain" />
+            </View>
+
+            <View style={styles.header}>
+                <Text style={styles.title}>{title}</Text>
+                {headerRight}
+            </View>
+
+            {children}
         </View>
-
-        <Text style={styles.title}>{title}</Text>
-    </View>
     );
 }
 
